@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 import pandas as pd
-from report import make_report
+# from report import make_report
 
 def clicks(prompt,name,skills):
     openai.api_key = st.secrets['open_api']
@@ -22,7 +22,42 @@ def clicks(prompt,name,skills):
     return response.choices[0].text
     
 
+def make_report(name,skills,output):
+    #Name
+    from PIL import Image, ImageFont, ImageDraw 
+    img=Image.open("image/Hello!.png")
+    title_font = ImageFont.truetype('font/KgThisIsNotGoodbye-opGV.ttf', 150)
+    title_text = str(name)
 
+    W,H = img.size
+    image_editable = ImageDraw.Draw(img)
+    _, _, w, h = image_editable.textbbox((0, 0), title_text, font=title_font)
+    image_editable.text(((W-w)/2, 375), title_text, font=title_font, fill=(0,0,0))
+    # image_editable.text((400,375), title_text, (0,0,0), font=title_font)
+    img.save("image/result.png")
+
+
+    #Skills
+    a=skills
+    r=round(len(a)/2)
+    img=Image.open("image/result.png")
+    title_font = ImageFont.truetype('font/Lora-VariableFont_wght.ttf', 55)
+    title_text1 = str(a[:r])
+    title_text2 = str(a[r:])
+    image_editable = ImageDraw.Draw(img)
+    image_editable.text((200,850.3),title_text1, (0,0,0), font=title_font)
+    image_editable.text((200,950.3),title_text2, (0,0,0), font=title_font)
+    img.save("image/result1.png")
+
+    
+
+    #Suggestions
+    a=output
+    img=Image.open("image/result1.png")
+    title_font = ImageFont.truetype('font/Lora-VariableFont_wght.ttf', 40)
+    image_editable = ImageDraw.Draw(img)
+    image_editable.text((200,1250),a, (0,0,0), font=title_font)
+    img.save("image/final.png")
 
 def se():
     x=True
