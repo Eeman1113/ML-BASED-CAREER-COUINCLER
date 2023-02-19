@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import openai
 def clicks(prompt):
-    openai.api_key = "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"
+    openai.api_key = st.secrets('open_api')
 
     response = openai.Completion.create(
         engine="text-curie-001",
