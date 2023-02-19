@@ -1,8 +1,9 @@
 import openai
 import streamlit as st
 import pandas as pd
-import openai
-def clicks(prompt):
+from report import make_report
+
+def clicks(prompt,name,skills):
     openai.api_key = st.secrets['open_api']
 
     response = openai.Completion.create(
@@ -18,6 +19,10 @@ def clicks(prompt):
     # st.write(st.markdown())
     st.write(response.choices[0].text)
     st.balloons()
+    return response.choices[0].text
+    
+
+
 
 def se():
     x=True
@@ -25,7 +30,7 @@ def se():
 
 
 st.markdown("<h1 style='text-align: center; '>Career Coupler ㊫</h1>", unsafe_allow_html=True)
-st.text_input("Enter Your Name")
+name=st.text_input("Enter Your Name")
 st.text_input("What Region Do You Live In")
 st.date_input("Enter Date Of Birth")
 df=pd.read_csv("skills.csv")
@@ -35,8 +40,15 @@ st.write('You selected:', skills)
 
 prompt="Suggest me 10 Jobs Positions based on my skils and describe all the careers suggested.\n My Skills are: "+str(skills)
 
+print(type(skills))
 r=st.button("Unfuse Me")
 while r==True:
-    clicks(prompt)
+    resp=clicks(prompt,name,skills)
+    print(name)
+    print(skills)
+    print(resp)
+    st.image(make_report(name=name,skills=skills,output=resp))
+    print("Die eeamn die")
+
     r=False
 
