@@ -28,7 +28,7 @@ st.markdown("<h1 style='text-align: center; '>Career Coupler ㊫</h1>", unsafe_a
 st.text_input("Enter Your Name")
 st.text_input("What Region Do You Live In")
 st.date_input("Enter Date Of Birth")
-df=pd.read_csv("/Users/eemanmajumder/code_shit/ML-BASED-CAREER-COUINCLER/why_am_I_pain_hoing_crie_arra_fr/GPT_3_in_my_Ass/skills.csv")
+df=pd.read_csv("skills.csv")
 a=df['skills']
 skills=st.multiselect("What are you good at?",a)
 st.write('You selected:', skills)
