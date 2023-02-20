@@ -1,8 +1,9 @@
+#____________________________________________________________________________________________________________________________________________________
 import openai
 import streamlit as st
 import pandas as pd
 # from report import make_report
-
+#____________________________________________________________________________________________________________________________________________________
 def clicks(prompt,name,skills):
     openai.api_key = st.secrets['open_api']
 
@@ -20,7 +21,7 @@ def clicks(prompt,name,skills):
     st.write(response.choices[0].text)
     st.balloons()
     return response.choices[0].text
-    
+#____________________________________________________________________________________________________________________________________________________
 
 def make_report(name,skills,output):
     #Name
@@ -58,10 +59,11 @@ def make_report(name,skills,output):
     image_editable = ImageDraw.Draw(img)
     image_editable.text((200,1250),a, (0,0,0), font=title_font)
     img.save("image/final.png")
+#____________________________________________________________________________________________________________________________________________________
 
 def se():
     x=True
-
+#____________________________________________________________________________________________________________________________________________________
 
 
 st.markdown("<h1 style='text-align: center; '>Career Coupler ㊫</h1>", unsafe_allow_html=True)
@@ -72,8 +74,11 @@ df=pd.read_csv("skills.csv")
 a=df['skills']
 skills=st.multiselect("What are you good at?",a)
 st.write('You selected:', skills)
+#____________________________________________________________________________________________________________________________________________________
 
 prompt="Suggest me 10 Jobs Positions based on my skils and describe all the careers suggested.\n My Skills are: "+str(skills)
+
+#____________________________________________________________________________________________________________________________________________________
 
 print(type(skills))
 r=st.button("Unfuse Me")
@@ -87,3 +92,4 @@ while r==True:
 
     r=False
 
+#____________________________________________________________________________end_of_project_____________________________________________________________________
