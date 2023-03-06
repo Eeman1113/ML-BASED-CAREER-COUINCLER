@@ -13,7 +13,7 @@ git clone https://github.com/<username>/ml-based-career-counsellor.git`
 `pip install -r requirements.txt`
 
 Set up an OpenAI API key and Streamlit secrets file to access the GPT-3 API and Streamlit app secrets respectively.
-##Usage
+## Usage
 Run the Streamlit app locally.<br>
 `streamlit run app.py`
 
@@ -21,7 +21,7 @@ Run the Streamlit app locally.<br>
 * Date of birth 
 * Select your skills from the list of skills.
 * Click the "Unfuse Me" button to generate job position suggestions based on your skills.
-## The app will display the suggested job positions and generate a report image that can be found in the image folder.
+<H3> The app will display the suggested job positions and generate a report image that can be found in the image folder.</H3><br>
 
 # Contributing
 *This Project was originally created by:*
