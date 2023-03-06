@@ -14,7 +14,7 @@ git clone https://github.com/<username>/ml-based-career-counsellor.git`
 
 Set up an OpenAI API key and Streamlit secrets file to access the GPT-3 API and Streamlit app secrets respectively.
 ##Usage
-Run the Streamlit app locally.
+Run the Streamlit app locally.<br>
 `streamlit run app.py`
 
 * Enter your name, region
