@@ -5,8 +5,8 @@ The ML Based Career Counsellor is a Streamlit app that uses OpenAI's GPT-3 langu
 The app uses the PIL library to create a report containing the user's name, selected skills, and the suggested job positions. The report is generated as an image and saved to the local file system.
 
 ## Installation
-`#Clone the repository to your local machine.<br>
-git clone https://github.com/<username>/ml-based-career-counsellor.git`
+Clone the repository to your local machine.
+`git clone https://github.com/<username>/ml-based-career-counsellor.git`
 
 ## Install the required packages listed in the requirements.txt file.
 
