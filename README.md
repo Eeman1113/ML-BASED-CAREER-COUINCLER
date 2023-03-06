@@ -25,10 +25,10 @@ Run the Streamlit app locally.<br>
 
 # Contributing
 *This Project was originally created by:*
-* Eeman Majumder
-* Aviral Asthana
-* Sakshi Sawarkar
-* Sannidhya Srivastava
+* Eeman Majumder - https://github.com/Eeman1113
+* Aviral Asthana - 
+* Sakshi Sawarkar - https://github.com/sakshi-sawarkar
+* Sannidhya Srivastava - 
 ___
 
 Contributions are welcome! If you find any bugs or have any suggestions for improvement, please feel free to open an issue or submit a pull request.
